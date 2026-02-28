@@ -12,18 +12,18 @@ const AwardSection = () => {
 
     return (
         <div className="bg absolute inset-0 flex items-center justify-center bg-[#050505]">
-            <div className="container mx-auto px-6">
-                <h2 className="section-heading text-5xl md:text-8xl font-heading uppercase mb-12 border-b border-white/10 pb-8 text-center md:text-left">
+            <div className="container mx-auto px-6 py-10 scale-90 md:scale-100 transition-transform">
+                <h2 className="section-heading text-[clamp(2rem,7vw,5rem)] font-heading uppercase mb-8 border-b border-white/10 pb-6 text-center md:text-left">
                     Our <span className="text-yellow-400">Wins</span>
                 </h2>
-                <div className="space-y-0 text-white">
+                <div className="space-y-0 text-white max-w-5xl mx-auto md:mx-0">
                     {awards.map((award, i) => (
-                        <div key={i} className="group py-8 md:py-12 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between hover:bg-white/[0.02] transition-colors cursor-pointer px-4">
-                            <div className="flex items-center gap-8 md:gap-24">
-                                <span className="text-lg opacity-40 font-mono tracking-tighter">{award.year}</span>
-                                <h3 className="text-3xl md:text-5xl font-heading uppercase group-hover:translate-x-4 transition-transform duration-500">{award.title}</h3>
+                        <div key={i} className="group py-5 md:py-10 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between hover:bg-white/[0.02] transition-colors cursor-pointer px-2">
+                            <div className="flex items-center gap-6 md:gap-20">
+                                <span className="text-sm md:text-lg opacity-40 font-mono tracking-tighter">{award.year}</span>
+                                <h3 className="text-xl md:text-4xl font-heading uppercase group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500">{award.title}</h3>
                             </div>
-                            <span className="text-lg opacity-40 uppercase tracking-widest mt-4 md:mt-0 font-sans">{award.org}</span>
+                            <span className="text-sm md:text-lg opacity-40 uppercase tracking-widest mt-2 md:mt-0 font-sans">{award.org}</span>
                         </div>
                     ))}
                 </div>

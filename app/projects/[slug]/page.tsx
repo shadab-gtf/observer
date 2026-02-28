@@ -33,38 +33,38 @@ const ProjectDetailPage = () => {
         <main className="min-h-screen bg-black text-white selection:bg-yellow-400 selection:text-black">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 md:px-10 max-w-7xl mx-auto">
+            <div className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-                    className="w-full aspect-video rounded-xl overflow-hidden mb-20 bg-zinc-900"
+                    className="w-full aspect-video rounded-xl overflow-hidden mb-12 md:mb-20 bg-zinc-900"
                 >
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                 </motion.div>
 
-                <div className="grid md:grid-cols-[1fr_2fr] gap-20">
+                <div className="grid lg:grid-cols-[1fr_2fr] gap-12 md:gap-20">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="space-y-12"
+                        className="space-y-8 md:space-y-12"
                     >
                         <div>
-                            <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Project</p>
-                            <h1 className="text-5xl font-heading uppercase">{project.title}</h1>
+                            <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-4">Project</p>
+                            <h1 className="text-3xl md:text-5xl font-heading uppercase">{project.title}</h1>
                         </div>
 
                         <div>
-                            <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Year</p>
-                            <p className="text-xl font-regular">{project.year}</p>
+                            <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-4">Year</p>
+                            <p className="text-lg md:text-xl font-regular">{project.year}</p>
                         </div>
 
                         <div>
-                            <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Services</p>
-                            <ul className="space-y-2">
+                            <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest mb-2 md:mb-4">Services</p>
+                            <ul className="space-y-1 md:space-y-2">
                                 {project.services.map((s: string) => (
-                                    <li key={s} className="text-lg font-regular">{s}</li>
+                                    <li key={s} className="text-base md:text-lg font-regular">{s}</li>
                                 ))}
                             </ul>
                         </div>
@@ -75,26 +75,26 @@ const ProjectDetailPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.7 }}
                     >
-                        <p className="text-2xl md:text-3xl font-regular leading-relaxed text-zinc-300">
+                        <p className="text-xl md:text-3xl font-regular leading-relaxed text-zinc-300">
                             {project.content}
                         </p>
                     </motion.div>
                 </div>
 
                 {/* Additional Content mockup */}
-                <div className="mt-40 grid md:grid-cols-2 gap-10">
-                    <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden">
+                <div className="mt-20 md:mt-40 grid md:grid-cols-2 gap-8 md:gap-10">
+                    <div className="aspect-[4/3] md:aspect-square bg-zinc-900 rounded-lg overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1512918766671-ad65181bc753?auto=format&fit=crop&q=80&w=800" alt="Detail 1" className="w-full h-full object-cover" />
                     </div>
-                    <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden translate-y-20">
+                    <div className="aspect-[4/3] md:aspect-square bg-zinc-900 rounded-lg overflow-hidden md:translate-y-20">
                         <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80&w=800" alt="Detail 2" className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>
 
-            <footer className="py-20 px-6 md:px-10 border-t border-zinc-900 mt-60">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <p className="text-zinc-600 text-sm">© 2026 Observer Studio. All rights reserved.</p>
+            <footer className="py-12 md:py-20 px-6 md:px-10 border-t border-zinc-900 mt-20 md:mt-60">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+                    <p className="text-zinc-600 text-xs md:text-sm text-center md:text-left">© 2026 Observer Studio. All rights reserved.</p>
                 </div>
             </footer>
         </main>

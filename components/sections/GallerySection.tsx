@@ -54,9 +54,9 @@ const GallerySection = forwardRef((props, ref) => {
                             alt={`Gallery ${i}`}
                             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"
                         />
-                        <div className="absolute inset-0 bg-black/40 flex items-end p-12 opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-black/40 flex items-end p-6 md:p-12 opacity-100 transition-opacity duration-500">
                             <div className="overflow-hidden">
-                                <h2 className="section-heading text-6xl md:text-8xl font-heading uppercase text-white translate-y-0 transition-transform duration-700">
+                                <h2 className="section-heading text-[clamp(2.5rem,8vw,6rem)] font-heading uppercase text-white translate-y-0 transition-transform duration-700">
                                     Masterpiece №{i + 1}
                                 </h2>
                             </div>
@@ -66,20 +66,20 @@ const GallerySection = forwardRef((props, ref) => {
             </div>
 
             {/* Pagination / Progress */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-4 items-center">
+            <div className="absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 md:gap-4 items-center">
                 {images.map((_, i) => (
                     <div
                         key={i}
-                        className={`h-1 transition-all duration-500 ${currentIndex === i ? "w-12 bg-yellow-400" : "w-6 bg-white/20"}`}
+                        className={`h-1 transition-all duration-500 ${currentIndex === i ? "w-8 md:w-12 bg-yellow-400" : "w-4 md:w-6 bg-white/20"}`}
                     />
                 ))}
             </div>
 
-            <div className="absolute bottom-8 left-10 text-white/30 text-[10px] font-sans tracking-[0.5em] uppercase pointer-events-none">
+            <div className="absolute bottom-6 md:bottom-8 left-6 md:left-10 text-white/30 text-[8px] md:text-[10px] font-sans tracking-[0.3em] md:tracking-[0.5em] uppercase pointer-events-none">
                 Scroll horizontally or swipe
             </div>
 
-            <div className="absolute bottom-8 right-10 text-white/50 text-xs font-sans tracking-[0.5em] uppercase pointer-events-none">
+            <div className="absolute bottom-6 md:bottom-8 right-6 md:right-10 text-white/50 text-[10px] md:text-xs font-sans tracking-[0.3em] md:tracking-[0.5em] uppercase pointer-events-none">
                 {currentIndex + 1} / {images.length}
             </div>
         </div>

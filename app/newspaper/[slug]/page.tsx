@@ -30,15 +30,15 @@ const NewspaperDetailPage = () => {
         <main className="min-h-screen bg-black text-white selection:bg-yellow-400 selection:text-black">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 md:px-10 max-w-4xl mx-auto">
+            <div className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-10 max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
-                    className="space-y-8 mb-20"
+                    className="space-y-6 md:space-y-8 mb-12 md:mb-20"
                 >
-                    <p className="text-zinc-500 text-xs uppercase tracking-widest">{article.date} — By {article.author}</p>
-                    <h1 className="text-5xl md:text-7xl font-heading uppercase leading-[1.1]">
+                    <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest">{article.date} — By {article.author}</p>
+                    <h1 className="text-[clamp(2.5rem,10vw,4.5rem)] font-heading uppercase leading-[1.1]">
                         {article.title}
                     </h1>
                 </motion.div>
@@ -47,7 +47,7 @@ const NewspaperDetailPage = () => {
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-                    className="aspect-[16/9] bg-zinc-900 rounded-lg overflow-hidden mb-20"
+                    className="aspect-[16/9] bg-zinc-900 rounded-lg overflow-hidden mb-12 md:mb-20"
                 >
                     <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
                 </motion.div>
@@ -56,31 +56,31 @@ const NewspaperDetailPage = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="prose prose-invert prose-lg max-w-none"
+                    className="prose prose-invert prose-base md:prose-lg max-w-none"
                 >
-                    <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-regular whitespace-pre-line">
+                    <p className="text-lg md:text-2xl text-zinc-300 leading-relaxed font-regular whitespace-pre-line">
                         {article.content}
                     </p>
                 </motion.div>
 
-                <div className="mt-32 pt-20 border-t border-zinc-900 flex justify-between items-center text-xs uppercase tracking-[0.2em]">
+                <div className="mt-20 md:mt-32 pt-12 md:pt-20 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs uppercase tracking-[0.2em] gap-8">
                     <a href="/newspaper" className="group flex items-center gap-4 hover:text-yellow-400 transition-colors">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="rotate-180">
+                        <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4 md:w-5 md:h-5 rotate-180 transition-colors">
                             <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                         Back to News
                     </a>
                     <div className="flex gap-6">
-                        <span>Share:</span>
+                        <span className="opacity-40">Share:</span>
                         <a href="#" className="hover:text-yellow-400 transition-colors">Twitter</a>
                         <a href="#" className="hover:text-yellow-400 transition-colors">LinkedIn</a>
                     </div>
                 </div>
             </div>
 
-            <footer className="py-20 px-6 md:px-10 border-t border-zinc-900 mt-20">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <p className="text-zinc-600 text-sm">© 2026 Observer Studio. All rights reserved.</p>
+            <footer className="py-12 md:py-20 px-6 md:px-10 border-t border-zinc-900 mt-12 md:mt-20">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
+                    <p className="text-zinc-600 text-xs md:text-sm">© 2026 Observer Studio. All rights reserved.</p>
                 </div>
             </footer>
         </main>

@@ -34,19 +34,19 @@ const NewspaperPage = () => {
         <main className="min-h-screen bg-black text-white selection:bg-yellow-400 selection:text-black">
             <Header />
 
-            <div className="pt-32 pb-20 px-6 md:px-10 max-w-7xl mx-auto">
+            <div className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-                    className="mb-32"
+                    className="mb-16 md:mb-32"
                 >
-                    <h1 className="text-[15vw] md:text-[10vw] font-heading uppercase leading-[0.85]">
+                    <h1 className="text-[clamp(4rem,15vw,10vw)] font-heading uppercase leading-[0.85]">
                         The <br /> News
                     </h1>
                 </motion.div>
 
-                <div className="space-y-32">
+                <div className="space-y-16 md:space-y-32">
                     {ARTICLES.map((article, i) => (
                         <motion.div
                             key={article.slug}
@@ -55,25 +55,25 @@ const NewspaperPage = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <Link href={`/newspaper/${article.slug}`} className="group grid md:grid-cols-[1fr_1.5fr] gap-10 md:gap-20 items-center">
-                                <div className="aspect-[16/9] overflow-hidden rounded-lg bg-zinc-900 order-2 md:order-1">
+                            <Link href={`/newspaper/${article.slug}`} className="group grid lg:grid-cols-[1fr_1.5fr] gap-8 md:gap-20 items-center">
+                                <div className="aspect-[16/9] overflow-hidden rounded-lg bg-zinc-900 order-2 lg:order-1">
                                     <img
                                         src={article.image}
                                         alt={article.title}
                                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                                     />
                                 </div>
-                                <div className="space-y-6 order-1 md:order-2">
-                                    <p className="text-zinc-500 text-xs uppercase tracking-widest">{article.date}</p>
-                                    <h2 className="text-4xl md:text-5xl font-heading uppercase leading-tight group-hover:text-yellow-400 transition-colors">
+                                <div className="space-y-4 md:space-y-6 order-1 lg:order-2">
+                                    <p className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest">{article.date}</p>
+                                    <h2 className="text-2xl md:text-5xl font-heading uppercase leading-tight group-hover:text-yellow-400 transition-colors">
                                         {article.title}
                                     </h2>
-                                    <p className="text-xl text-zinc-400 font-regular">
+                                    <p className="text-base md:text-xl text-zinc-400 font-regular line-clamp-2 md:line-clamp-none">
                                         {article.excerpt}
                                     </p>
-                                    <div className="flex items-center gap-4 text-xs uppercase tracking-widest font-bold pt-4">
+                                    <div className="flex items-center gap-4 text-[10px] md:text-xs uppercase tracking-widest font-bold pt-2 md:pt-4">
                                         Read Article
-                                        <div className="w-12 h-[1px] bg-zinc-700 transition-all duration-500 group-hover:w-20 group-hover:bg-yellow-400"></div>
+                                        <div className="w-8 md:w-12 h-[1px] bg-zinc-700 transition-all duration-500 group-hover:w-16 md:group-hover:w-20 group-hover:bg-yellow-400"></div>
                                     </div>
                                 </div>
                             </Link>
@@ -82,9 +82,9 @@ const NewspaperPage = () => {
                 </div>
             </div>
 
-            <footer className="py-20 px-6 md:px-10 border-t border-zinc-900 mt-40">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <p className="text-zinc-600 text-sm">© 2026 Observer Studio. All rights reserved.</p>
+            <footer className="py-12 md:py-20 px-6 md:px-10 border-t border-zinc-900 mt-20 md:mt-40 text-center md:text-left">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+                    <p className="text-zinc-600 text-xs md:text-sm">© 2026 Observer Studio. All rights reserved.</p>
                 </div>
             </footer>
         </main>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ClientWrapper from "@/components/ClientWrapper";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const headingFont = localFont({
   src: "../public/assets/fonts/Heading-font.woff2",
   variable: "--font-heading",
@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   themeColor: "#000000",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  icons: {
+    icon: "/assets/appstore-images/ios/32.png",
+    shortcut: "/assets/appstore-images/ios/32.png",
+    apple: "/assets/appstore-images/ios/180.png",
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +39,7 @@ export default function RootLayout({
         <ClientWrapper>
           {children}
         </ClientWrapper>
+        <SpeedInsights />
       </body>
     </html>
   );

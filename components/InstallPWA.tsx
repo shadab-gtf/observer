@@ -48,8 +48,8 @@ const InstallPWA = () => {
                 >
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center text-black font-bold text-xl">
-                                O
+                            <div className="w-12 h-12 bg-zinc-800 rounded-xl overflow-hidden flex items-center justify-center">
+                                <img src="/assets/appstore-images/android/launchericon-192x192.png" alt="Observer Icon" className="w-full h-full object-cover" />
                             </div>
                             <div>
                                 <h3 className="text-white font-heading uppercase text-lg leading-tight">Install Observer</h3>
